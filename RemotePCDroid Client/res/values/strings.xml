@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string
+		name="app_name">RemotePCDroid</string>
+	<string
+		name="control_tip">\n请长按Menu按钮\n选择对应选项</string>
+	<string
+	    name="text_pcshutdown">服务端操作系统正在关机.</string>
+	<string
+		name="text_shutdownpc">服务端系统关机</string>
+	<string
+	    name="text_pcreboot">服务端操作系统正在重启.</string>
+	<string
+		name="text_rebootpc">服务端系统重启</string>
+	<string
+	    name="text_pchibernate">服务端操作系统进入休眠.</string>
+	<string
+		name="text_hibernatepc">服务端系统休眠</string>
+	<string
+		name="text_icon">图标</string>
+	<string
+		name="text_shortcuts">远程控制</string>
+	<string
+		name="text_settings">设置</string>
+	<string
+		name="text_get_server">服务端</string>
+	<string
+		name="text_file_explorer">文件浏览</string>
+	<string
+		name="text_refresh">刷新</string>
+	<string
+		name="text_explore_roots">浏览根目录</string>
+	<string
+		name="text_connection">连接</string>
+	<string
+		name="text_connections">服务端</string>
+	<string
+		name="text_display">显示</string>
+	<string
+		name="text_fullscreen">全屏</string>
+
+	<string
+		name="text_reset_preferences">重置</string>
+	<string
+		name="text_connection_established">已与服务端建立连接.</string>
+	<string
+		name="text_connection_closed">服务端连接已断开.</string>
+	<string
+		name="text_connection_refused">连接被拒绝，请检查服务端是否运行.</string>
+	<string
+		name="text_illegal_connection_parameter">非法的连接选项.</string>
+	<string
+		name="text_authenticated">连接认证成功.</string>
+	<string
+		name="text_not_authenticated">连接密码错误.</string>
+	<string
+		name="text_no_connection">没有可用的服务端连接配置.\n长按Menu按钮, 新建服务端连接.</string>
+	<string
+		name="text_no_connection_selected">没有选择服务端连接.\n长按Menu按钮, 选择"连接".</string>
+	<string
+		name="text_ok">确定</string>
+	<string
+		name="text_new">新建服务端连接</string>
+	<string-array
+		name="connection_action_name">
+		<item>选中</item>
+		<item>编辑</item>
+		<item>删除</item>
+	</string-array>
+	<string
+		name="text_wifi">新建服务端连接</string>
+	<string
+		name="text_name">连接名称 : </string>
+	<string
+		name="text_password">连接密码 : </string>
+	<string
+		name="text_host">服务端IP : </string>
+	<string
+		name="text_port">服务端口 : </string>
+	<string
+		name="text_address">地址 : </string>
+	<string
+		name="text_save">保存</string>
+	<string
+		name="text_new_connection">新建服务端</string>
+	<string
+		name="text_hint_host">192.168.42.88</string>
+</resources>
