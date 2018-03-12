@@ -17,6 +17,20 @@
 	<string
 		name="text_hibernatepc">服务端系统休眠</string>
 	<string
+	    name="text_space">单击空格键</string>
+	<string
+	    name="text_esc">单击ESC键</string>
+	<string
+	    name="text_enter">单击回车键</string>
+	<string
+	    name="text_altenter">单击ALT+回车键</string>
+	<string
+	    name="text_altf4">单击ALT+F4键</string>
+	<string
+	    name="text_singleclk">鼠标单击</string>
+	<string
+	    name="text_dblclk">鼠标双击</string>
+	<string
 		name="text_icon">图标</string>
 	<string
 		name="text_shortcuts">远程控制</string>

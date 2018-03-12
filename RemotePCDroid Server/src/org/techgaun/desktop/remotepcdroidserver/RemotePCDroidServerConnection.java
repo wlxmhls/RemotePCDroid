@@ -1,6 +1,9 @@
 package org.techgaun.desktop.remotepcdroidserver;
 
 import java.awt.Desktop;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +17,7 @@ import org.techgaun.remotepcdroid.protocol.action.AuthenticationResponseAction;
 import org.techgaun.remotepcdroid.protocol.action.FileExploreRequestAction;
 import org.techgaun.remotepcdroid.protocol.action.FileExploreResponseAction;
 import org.techgaun.remotepcdroid.protocol.action.HibernateAction;
+import org.techgaun.remotepcdroid.protocol.action.MouseKeyboardAction;
 import org.techgaun.remotepcdroid.protocol.action.RebootAction;
 import org.techgaun.remotepcdroid.protocol.action.RemotePCDroidAction;
 import org.techgaun.remotepcdroid.protocol.action.ShutDownAction;
@@ -30,12 +34,23 @@ public class RemotePCDroidServerConnection implements Runnable
 	
 	private String cmd;
 	
+	private Robot robot;
+	
 	public RemotePCDroidServerConnection(RemotePCDroidServerApp application, RemotePCDroidConnection connection)
 	{
 		this.application = application;
 		this.connection = connection;
 		
 		this.authenticated = false;
+		
+		try
+		{
+			this.robot = new Robot();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		
 		(new Thread(this)).start();
 	}
@@ -111,6 +126,10 @@ public class RemotePCDroidServerConnection implements Runnable
 					e.printStackTrace();
 				}
 			}
+			else if (action instanceof MouseKeyboardAction)
+			{
+				this.MouseKbd((MouseKeyboardAction) action);
+			}
 		}
 		else
 		{
@@ -131,6 +150,55 @@ public class RemotePCDroidServerConnection implements Runnable
 				}
 			}
 		}
+	}
+	
+	private void MouseKbd(MouseKeyboardAction action)
+	{
+		switch (action.choice)
+		{
+			case 0: // 空格键
+				robot.keyPress(KeyEvent.VK_SPACE);
+				robot.keyRelease(KeyEvent.VK_SPACE);
+				robot.delay(500);
+				break;
+			case 1: // ESC键
+				robot.keyPress(KeyEvent.VK_ESCAPE);
+				robot.keyRelease(KeyEvent.VK_ESCAPE);
+				robot.delay(500);
+				break;
+			case 2: // 回车键
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				robot.delay(500);
+				break;
+			case 3: // alt enter
+				robot.keyPress(KeyEvent.VK_ALT);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ALT);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				robot.delay(500);
+				break;
+			case 4: // alt f4
+				robot.keyPress(KeyEvent.VK_ALT);
+				robot.keyPress(KeyEvent.VK_F4);
+				robot.keyRelease(KeyEvent.VK_ALT);
+				robot.keyRelease(KeyEvent.VK_F4);
+				robot.delay(500);
+				break;
+			case 5: // 鼠标单击
+				robot.mousePress(InputEvent.BUTTON1_MASK);
+				robot.mouseRelease(InputEvent.BUTTON1_MASK);
+				robot.delay(1000);
+				break;
+			case 6: // 鼠标双击
+				robot.mousePress(InputEvent.BUTTON1_MASK);
+				robot.mouseRelease(InputEvent.BUTTON1_MASK);
+				robot.mousePress(InputEvent.BUTTON1_MASK);
+				robot.mouseRelease(InputEvent.BUTTON1_MASK);
+				robot.delay(1000);
+				break;
+		}
+		
 	}
 	
 	private void authentificate(AuthenticationAction action)

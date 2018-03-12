@@ -8,27 +8,90 @@
     <Button
         android:id="@+id/btnShutDown"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/text_shutdownpc" />
 
     <Button
         android:id="@+id/btnReboot"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/text_rebootpc" />
     
     <Button
         android:id="@+id/btnHibernate"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/text_hibernatepc" />
+    
+    <Button
+        android:id="@+id/btnSpace"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_space" />
+        
+    <Button
+        android:id="@+id/btnEsc"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_esc" />
+    
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_enter" />
+    
+    <Button
+        android:id="@+id/btnAltEnter"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_altenter" />
+    
+    <Button
+        android:id="@+id/btnAltF4"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_altf4" />
+    
+    <Button
+        android:id="@+id/btnSingleClk"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_singleclk" />
+    
+    <Button
+        android:id="@+id/btnDblClk"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_dblclk" />
 </LinearLayout>

@@ -4,6 +4,7 @@ import org.techgaun.android.remotepcdroid.client.R;
 import org.techgaun.android.remotepcdroid.client.app.RemotePCDroid;
 import org.techgaun.remotepcdroid.protocol.RemotePCDroidActionReceiver;
 import org.techgaun.remotepcdroid.protocol.action.HibernateAction;
+import org.techgaun.remotepcdroid.protocol.action.MouseKeyboardAction;
 import org.techgaun.remotepcdroid.protocol.action.RebootAction;
 import org.techgaun.remotepcdroid.protocol.action.RemotePCDroidAction;
 import org.techgaun.remotepcdroid.protocol.action.ShutDownAction;
@@ -37,6 +38,13 @@ public class RemotePCDroidShortcutsActivity extends Activity implements RemotePC
 		final Button btnShutDown = (Button) findViewById(R.id.btnShutDown);
 		final Button btnReboot = (Button) findViewById(R.id.btnReboot);
 		final Button btnHibernate = (Button) findViewById(R.id.btnHibernate);
+		final Button btnSpace = (Button) findViewById(R.id.btnSpace);
+		final Button btnEsc = (Button) findViewById(R.id.btnEsc);
+		final Button btnEnter = (Button) findViewById(R.id.btnEnter);
+		final Button btnAltEnter = (Button) findViewById(R.id.btnAltEnter);
+		final Button btnAltF4 = (Button) findViewById(R.id.btnAltF4);
+		final Button btnSingleClk = (Button) findViewById(R.id.btnSingleClk);
+		final Button btnDblClk = (Button) findViewById(R.id.btnDblClk);
 		
 		btnShutDown.setOnClickListener(new OnClickListener()
 		{
@@ -67,6 +75,104 @@ public class RemotePCDroidShortcutsActivity extends Activity implements RemotePC
 				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_pchibernate);
 			}
 		});
+		
+		btnSpace.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(0);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_space);
+			}
+		});
+		
+		btnEsc.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(1);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_esc);
+			}
+		});
+		
+		btnEnter.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(2);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_enter);
+			}
+		});
+		
+		btnAltEnter.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(3);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_altenter);
+			}
+		});
+		
+		btnAltF4.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(4);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_altf4);
+			}
+		});
+		
+		btnSingleClk.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(5);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_singleclk);
+			}
+		});
+		
+		btnDblClk.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				sentMouseKeyboard(6);
+				RemotePCDroidShortcutsActivity.this.application.showMyAppToast(R.string.text_dblclk);
+			}
+		});
+	}
+	
+	protected void sentMouseKeyboard(int ch)
+	{
+		switch (ch)
+		{
+			case 0: // 空格键
+				this.application.sendAction(new MouseKeyboardAction(0));
+				break;
+			case 1: // Esc键
+				this.application.sendAction(new MouseKeyboardAction(1));
+				break;
+			case 2: // 回车键
+				this.application.sendAction(new MouseKeyboardAction(2));
+				break;
+			case 3: // ALT 回车键
+				this.application.sendAction(new MouseKeyboardAction(3));
+				break;
+			case 4: // ALT F4
+				this.application.sendAction(new MouseKeyboardAction(4));
+				break;
+			case 5: // 鼠标单击
+				this.application.sendAction(new MouseKeyboardAction(5));
+				break;
+			case 6: // 鼠标双击
+				this.application.sendAction(new MouseKeyboardAction(6));
+				break;
+		}
 	}
 	
 	protected void sendShutDownRequest()

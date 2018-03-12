@@ -14,6 +14,7 @@ public abstract class RemotePCDroidAction
 	public static final byte SHUTDOWN_SERVER = 4;
 	public static final byte REBOOT_SERVER = 5;
 	public static final byte HIBERNATE_SERVER = 6;
+	public static final byte MOUSEKEYBOARD = 7;
 	
 	public static RemotePCDroidAction parse(DataInputStream dis) throws IOException
 	{
@@ -35,6 +36,8 @@ public abstract class RemotePCDroidAction
 				return RebootAction.parse(dis);
 			case HIBERNATE_SERVER:
 				return HibernateAction.parse(dis);
+			case MOUSEKEYBOARD:
+				return MouseKeyboardAction.parse(dis);
 				
 			default:
 				throw new ProtocolException();
